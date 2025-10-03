@@ -21,29 +21,19 @@ public class MapTester
     
     public void enterNumber(String name,String number)
     {
-        Mahikbook.put(name,number);
+        Mahikbook.put(number,name);
     }
     
     public String lookupNumber(String name)
     {
         return Mahikbook.get(name);
     }
-        
-    
-    
-    
-     
-    
-    
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    // question 32 answer
+    public void Mahikseek()
     {
-        // put your code here
-        return x + y;
+        System.out.println(Mahikbook.keySet());
     }
+    
+    
+    
 }
