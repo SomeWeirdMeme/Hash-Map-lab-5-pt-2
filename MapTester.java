@@ -33,7 +33,9 @@ public class MapTester
     {
         System.out.println(Mahikbook.keySet());
     }
-    
-    
-    
+    // question 30 answer
+    public boolean hasMahik(String name)
+    {
+        return Mahikbook.containsKey(name);
+    }
 }

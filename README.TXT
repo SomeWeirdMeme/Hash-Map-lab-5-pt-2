@@ -15,7 +15,7 @@ and get the two values.
 
 29. They can each coexist
 
-30.
+30.in the code
 
 31. return false
 
