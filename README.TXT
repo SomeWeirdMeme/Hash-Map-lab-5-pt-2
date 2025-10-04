@@ -21,4 +21,18 @@ and get the two values.
 
 32. in the code
 
-33.
+33.check code
+
+34. The main Differences of HashSet and ArrayList are 
+Duplicates: Allowed in arrayList not hashset
+Order: Hashset No order and array list is ordered and maintains it
+HashSet focuses on uniqueness
+arraylist focuses on order
+The main similarities
+they store objects
+resizeable
+same methods
+support iteration using loops
+
+35.Returning words from a hash set gives unique not ordered words and arraylist gives maybe dupes and ordered list
+I kinda said this in the question above
