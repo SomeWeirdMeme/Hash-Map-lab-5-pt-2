@@ -1,12 +1,16 @@
+import java.util.HashSet;
+import java.util.Arrays;
 /**
  * Main technical support system class.
  * Uses InputReader to read user input and Responder to reply.
  */
-public class SupportSystem {
+public class SupportSystem 
+{
     private InputReader reader;
     private Responder responder;
 
-    public SupportSystem() {
+    public SupportSystem() 
+    {
         reader = new InputReader();
         responder = new Responder();
     }
@@ -14,46 +18,37 @@ public class SupportSystem {
     /**
      * Start the support system dialog
      */
-    public void start() {
+    public void start() 
+    {
         boolean finished = false;
         printWelcome();
 
-        while (!finished) {
-            String input = reader.getInput().trim().toLowerCase();
+        while (!finished) 
+        {
+            String inputLine = reader.getInput().trim().toLowerCase();
+            
+            HashSet<String> words = new HashSet<>(Arrays.asList(inputLine.split("//s+")));
 
-            if (input.startsWith("bye")) {
+            if (words.contains("bye")) 
+            {
                 finished = true;
-            } else {
-                
-                String[] words = input.split(" ");
-                String response = null;
-
-                
-                for (String word : words) {
-                    response = responder.generateResponse(word);
-                    if (response != null) {
-                        break; 
-                    }
-                }
-
-                
-                if (response == null) {
-                    response = responder.generateResponse("");
-                }
-
+            } else 
+            {
+                String response = responder.generateResponse(words);
                 System.out.println(response);
             }
         }
-
         printGoodbye();
     }
 
-    private void printWelcome() {
+    private void printWelcome() 
+    {
         System.out.println("Welcome to the DodgySoft Technical Support System.");
         System.out.println("Please type your problem. Type 'bye' to exit.");
     }
 
-    private void printGoodbye() {
-        System.out.println("Nice talking to you. Bye...");
+    private void printGoodbye() 
+    {
+        System.out.println("Nice talking to Mahik. Bye...");
     }
 }
