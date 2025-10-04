@@ -9,6 +9,7 @@ public class Responder
     private HashMap<String, String> responsesMap;
     private Random randomGenerator;
     private String[] defaultResponses;
+    private String lastDefaultResponse = null;
 
     public Responder() 
     {
@@ -70,9 +71,15 @@ public class Responder
     /**
      * Pick a random default response
      */
-    private String pickDefaultResponse() {
-        int index = randomGenerator.nextInt(defaultResponses.length);
-        return defaultResponses[index];
+    private String pickDefaultResponse() 
+    {
+        String response;
+        do{
+            int index = randomGenerator.nextInt(defaultResponses.length);
+            response = defaultResponses[index];
+        } while (response.equals(lastDefaultResponse));
+        lastDefaultResponse = response;
+        return response;
     }
 }
 
