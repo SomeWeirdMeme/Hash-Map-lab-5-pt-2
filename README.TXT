@@ -36,3 +36,5 @@ support iteration using loops
 
 35.Returning words from a hash set gives unique not ordered words and arraylist gives maybe dupes and ordered list
 I kinda said this in the question above
+
+36.
