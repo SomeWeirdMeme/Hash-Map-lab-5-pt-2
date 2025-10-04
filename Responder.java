@@ -39,7 +39,11 @@ public class Responder
      */
     private void fillResponsesMap() 
     {
-        responsesMap.put("slow", "Throw out your laptop");
+        String mahikResponse = "Throw out your laptop";
+        String[] slowKeywords = {"slow", "sluggish", "crawl"};
+        for (String word : slowKeywords) {
+            responsesMap.put(word, mahikResponse);
+        }
         responsesMap.put("crash", "Have you tried buying a new pc.");
         responsesMap.put("error", "Please provide 500 dollars so i can help");
         responsesMap.put("help", "Sure, mahik is here to help, sauce the bank info");
