@@ -1,5 +1,6 @@
 import java.util.Scanner;
-
+import java.util.HashSet;
+import java.util.Arrays;
 /**
  * InputReader reads typed text input from the terminal.
  */
@@ -11,14 +12,13 @@ public class InputReader
     {
         reader = new Scanner(System.in);
     }
-
-    /**
-     * Read a line of text from the user
-     */
-    public String getInput() 
+    
+    public HashSet<String> getWords()
     {
-        System.out.print("> ");
-        return reader.nextLine();
+        System.out.println("> ");
+        String inputLine = reader.nextLine();
+        String[] splitWords = inputLine.toLowerCase().split("//s+");
+        return new HashSet<>(Arrays.asList(splitWords));
     }
 }
 

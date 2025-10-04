@@ -1,34 +1,24 @@
 import java.util.HashSet;
-import java.util.Arrays;
 /**
  * Main technical support system class.
  * Uses InputReader to read user input and Responder to reply.
  */
 public class SupportSystem 
 {
-    private InputReader reader;
-    private Responder responder;
-
-    public SupportSystem() 
-    {
-        reader = new InputReader();
-        responder = new Responder();
-    }
+    private InputReader reader = new InputReader();
+    private Responder responder = new Responder();
 
     /**
      * Start the support system dialog
      */
     public void start() 
     {
-        boolean finished = false;
         printWelcome();
+        boolean finished = false;
 
         while (!finished) 
         {
-            String inputLine = reader.getInput().trim().toLowerCase();
-            
-            HashSet<String> words = new HashSet<>(Arrays.asList(inputLine.split("//s+")));
-
+            HashSet<String> words = reader.getWords();
             if (words.contains("bye")) 
             {
                 finished = true;
@@ -50,5 +40,11 @@ public class SupportSystem
     private void printGoodbye() 
     {
         System.out.println("Nice talking to Mahik. Bye...");
+    }
+    
+    public static void main(String[] args) 
+    {
+        SupportSystem system = new SupportSystem();
+        system.start();
     }
 }
